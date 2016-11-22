@@ -16,6 +16,7 @@ deps:
 	go get github.com/ernestio/ernest-config-client
 	go get github.com/ernestio/ernestaws
 	go get github.com/aws/aws-sdk-go/aws
+	go get github.com/satori/go.uuid
 
 dev-deps: deps
 	go get github.com/golang/lint/golint
