@@ -18,6 +18,8 @@ import (
 	"github.com/ernestio/ernestaws/instance"
 	"github.com/ernestio/ernestaws/nat"
 	"github.com/ernestio/ernestaws/network"
+	"github.com/ernestio/ernestaws/rdscluster"
+	"github.com/ernestio/ernestaws/rdsinstance"
 	"github.com/ernestio/ernestaws/route53"
 	"github.com/ernestio/ernestaws/s3"
 	"github.com/ernestio/ernestaws/vpc"
@@ -48,6 +50,10 @@ func getEvent(m *nats.Msg) (n ernestaws.Event) {
 		n = s3.New(m.Subject, m.Data)
 	case "route53":
 		n = route53.New(m.Subject, m.Data)
+	case "rds_cluster":
+		n = rdscluster.New(m.Subject, m.Data)
+	case "rds_instance":
+		n = rdsinstance.New(m.Subject, m.Data)
 	}
 
 	return n
