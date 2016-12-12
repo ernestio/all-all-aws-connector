@@ -31,29 +31,30 @@ var natsErr error
 var err error
 
 func getEvent(m *nats.Msg) (n ernestaws.Event) {
+	key := []byte(os.Getenv("ERNEST_CRYPTO_KEY"))
 	parts := strings.Split(m.Subject, ".")
 
 	switch parts[0] {
 	case "network":
-		n = network.New(m.Subject, m.Data)
+		n = network.New(m.Subject, m.Data, key)
 	case "nat":
-		n = nat.New(m.Subject, m.Data)
+		n = nat.New(m.Subject, m.Data, key)
 	case "firewall":
-		n = firewall.New(m.Subject, m.Data)
+		n = firewall.New(m.Subject, m.Data, key)
 	case "vpc":
-		n = vpc.New(m.Subject, m.Data)
+		n = vpc.New(m.Subject, m.Data, key)
 	case "instance":
-		n = instance.New(m.Subject, m.Data)
+		n = instance.New(m.Subject, m.Data, key)
 	case "elb":
-		n = elb.New(m.Subject, m.Data)
+		n = elb.New(m.Subject, m.Data, key)
 	case "s3":
-		n = s3.New(m.Subject, m.Data)
+		n = s3.New(m.Subject, m.Data, key)
 	case "route53":
-		n = route53.New(m.Subject, m.Data)
+		n = route53.New(m.Subject, m.Data, key)
 	case "rds_cluster":
-		n = rdscluster.New(m.Subject, m.Data)
+		n = rdscluster.New(m.Subject, m.Data, key)
 	case "rds_instance":
-		n = rdsinstance.New(m.Subject, m.Data)
+		n = rdsinstance.New(m.Subject, m.Data, key)
 	}
 
 	return n
