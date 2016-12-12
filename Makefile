@@ -14,6 +14,7 @@ test:
 deps:
 	go get github.com/nats-io/nats
 	go get github.com/ernestio/ernest-config-client
+	go get github.com/ernestio/crypto
 	go get github.com/ernestio/ernestaws
 	go get github.com/aws/aws-sdk-go/aws
 	go get github.com/satori/go.uuid
