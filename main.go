@@ -13,6 +13,7 @@ import (
 
 	ecc "github.com/ernestio/ernest-config-client"
 	"github.com/ernestio/ernestaws"
+	"github.com/ernestio/ernestaws/ebs"
 	"github.com/ernestio/ernestaws/elb"
 	"github.com/ernestio/ernestaws/firewall"
 	"github.com/ernestio/ernestaws/instance"
@@ -55,6 +56,8 @@ func getEvent(m *nats.Msg) (n ernestaws.Event) {
 		n = rdscluster.New(m.Subject, m.Data, key)
 	case "rds_instance":
 		n = rdsinstance.New(m.Subject, m.Data, key)
+	case "ebs_volume":
+		n = ebs.New(m.Subject, m.Data, key)
 	}
 
 	return n
