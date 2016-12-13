@@ -31,7 +31,7 @@ var natsErr error
 var err error
 
 func getEvent(m *nats.Msg) (n ernestaws.Event) {
-	key := []byte(os.Getenv("ERNEST_CRYPTO_KEY"))
+	key := os.Getenv("ERNEST_CRYPTO_KEY")
 	parts := strings.Split(m.Subject, ".")
 
 	switch parts[0] {
