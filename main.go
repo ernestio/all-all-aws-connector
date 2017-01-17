@@ -36,27 +36,27 @@ func getEvent(m *nats.Msg) (n ernestaws.Event) {
 	parts := strings.Split(m.Subject, ".")
 
 	switch parts[0] {
-	case "network":
+	case "network", "networks":
 		n = network.New(m.Subject, m.Data, key)
-	case "nat":
+	case "nat", "nats":
 		n = nat.New(m.Subject, m.Data, key)
-	case "firewall":
+	case "firewall", "firewalls":
 		n = firewall.New(m.Subject, m.Data, key)
-	case "vpc":
+	case "vpc", "vpcs":
 		n = vpc.New(m.Subject, m.Data, key)
-	case "instance":
+	case "instance", "instances":
 		n = instance.New(m.Subject, m.Data, key)
-	case "elb":
+	case "elb", "elbs":
 		n = elb.New(m.Subject, m.Data, key)
-	case "s3":
+	case "s3", "s3s":
 		n = s3.New(m.Subject, m.Data, key)
-	case "route53":
+	case "route53", "route53s":
 		n = route53.New(m.Subject, m.Data, key)
-	case "rds_cluster":
+	case "rds_cluster", "rds_clusters":
 		n = rdscluster.New(m.Subject, m.Data, key)
-	case "rds_instance":
+	case "rds_instance", "rds_instances":
 		n = rdsinstance.New(m.Subject, m.Data, key)
-	case "ebs_volume":
+	case "ebs_volume", "ebs_volumes":
 		n = ebs.New(m.Subject, m.Data, key)
 	}
 
