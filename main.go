@@ -5,6 +5,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 	"os"
@@ -63,6 +64,16 @@ func getEvent(m *nats.Msg) (n ernestaws.Event) {
 	return n
 }
 
+func expectsResponse(m *nats.Msg) bool {
+	var e struct {
+		ExpectsResponse bool `json:"expects_response"`
+	}
+	if err := json.Unmarshal(m.Data, &e); err != nil {
+		return false
+	}
+	return e.ExpectsResponse
+}
+
 func eventHandler(m *nats.Msg) {
 	var n ernestaws.Event
 	if n = getEvent(m); n == nil {
@@ -71,6 +82,9 @@ func eventHandler(m *nats.Msg) {
 	}
 
 	subject, data := ernestaws.Handle(&n)
+	if expectsResponse(m) == true {
+		subject = m.Reply
+	}
 	if err := nc.Publish(subject, data); err != nil {
 		log.Println("Couldn't publish to nats")
 	}
