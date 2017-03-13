@@ -100,7 +100,7 @@ func main() {
 
 	for _, subject := range events {
 		fmt.Println("listening for " + subject)
-		if _, err := nc.Subscribe(subject, eventHandler); err != nil {
+		if _, err := nc.QueueSubscribe(subject, "aws-connector", eventHandler); err != nil {
 			log.Println("Couldn't publish to nats")
 		}
 	}
