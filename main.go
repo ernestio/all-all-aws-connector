@@ -18,6 +18,7 @@ import (
 	"github.com/ernestio/ernestaws/elb"
 	"github.com/ernestio/ernestaws/firewall"
 	"github.com/ernestio/ernestaws/instance"
+	"github.com/ernestio/ernestaws/internetgateway"
 	"github.com/ernestio/ernestaws/nat"
 	"github.com/ernestio/ernestaws/network"
 	"github.com/ernestio/ernestaws/rdscluster"
@@ -39,6 +40,8 @@ func getEvent(m *nats.Msg) (n ernestaws.Event) {
 	switch parts[0] {
 	case "network", "networks":
 		n = network.New(m.Subject, m.Data, key)
+	case "internet_gateway", "internet_gateways":
+		n = internetgateway.New(m.Subject, m.Data, key)
 	case "nat", "nats":
 		n = nat.New(m.Subject, m.Data, key)
 	case "firewall", "firewalls":
