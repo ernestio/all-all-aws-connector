@@ -17,6 +17,9 @@ import (
 	"github.com/ernestio/ernestaws/ebs"
 	"github.com/ernestio/ernestaws/elb"
 	"github.com/ernestio/ernestaws/firewall"
+	"github.com/ernestio/ernestaws/iaminstanceprofile"
+	"github.com/ernestio/ernestaws/iampolicy"
+	"github.com/ernestio/ernestaws/iamrole"
 	"github.com/ernestio/ernestaws/instance"
 	"github.com/ernestio/ernestaws/internetgateway"
 	"github.com/ernestio/ernestaws/nat"
@@ -62,6 +65,12 @@ func getEvent(m *nats.Msg) (n ernestaws.Event) {
 		n = rdsinstance.New(m.Subject, m.Data, key)
 	case "ebs_volume", "ebs_volumes":
 		n = ebs.New(m.Subject, m.Data, key)
+	case "iam_role", "iam_roles":
+		n = iamrole.New(m.Subject, m.Data, key)
+	case "iam_policy", "iam_policies":
+		n = iampolicy.New(m.Subject, m.Data, key)
+	case "iam_instance_profile", "iam_instance_profiles":
+		n = iaminstanceprofile.New(m.Subject, m.Data, key)
 	}
 
 	return n
