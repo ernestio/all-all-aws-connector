@@ -1,0 +1,21 @@
+version: 2
+jobs:
+   build:
+     machine:
+       image: circleci/classic:201709-01
+     environment:
+       NATS_URI:  nats://127.0.0.1:4222
+     working_directory: /home/circleci/.go_workspace/src/github.com/ernestio/all-all-aws-connector
+     steps:
+       - checkout
+       - run: 
+           name: Install Dependencies
+           command: |
+             docker run -d -p 4222:4222 nats
+             make dev-deps
+       - run: 
+           name: Code Analysis
+           command: make lint
+       - run: 
+           name: Unit Tests
+           command: make test
