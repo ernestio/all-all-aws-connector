@@ -5,24 +5,19 @@ build:
 	go build -v ./...
 
 lint:
-	golint ./...
-	go vet ./...
+	gometalinter --config .linter.conf
 
 test:
-	go test -v ./... --cover
+	go test --cover -v $$(go list ./... | grep -v '/vendor/')
 
 deps:
-	go get golang.org/x/crypto/pbkdf2
-	go get github.com/nats-io/nats
-	go get github.com/ernestio/ernest-config-client
-	go get github.com/ernestio/crypto
-	go get github.com/ernestio/ernestaws
-	go get github.com/aws/aws-sdk-go/aws
-	go get github.com/satori/go.uuid
+	go get -u github.com/golang/dep/cmd/dep
+	dep ensure
 
 dev-deps: deps
-	go get github.com/golang/lint/golint
-	go get github.com/smartystreets/goconvey/convey
+	go get github.com/smartystreets/goconvey
+	go get github.com/alecthomas/gometalinter
+	gometalinter --install
 
 clean:
 	go clean
