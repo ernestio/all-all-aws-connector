@@ -73,7 +73,7 @@
     "s3",
     "vpc"
   ]
-  revision = "0fae2c506ae29dd44e92dd7b763eed8ec8e71b4b"
+  revision = "fd37bb247aea53b1b9952f6e97610f4dea0af4e7"
 
 [[projects]]
   name = "github.com/go-ini/ini"
