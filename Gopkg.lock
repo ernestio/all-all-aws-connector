@@ -49,7 +49,7 @@
   branch = "master"
   name = "github.com/ernestio/ernest-config-client"
   packages = ["."]
-  revision = "3031a29ef3927b84e94180b64a88f7efed657195"
+  revision = "3ae64ad7b8e5b19b31ff8a8e0bedcf807989e42e"
 
 [[projects]]
   branch = "develop"
@@ -114,15 +114,10 @@
 [[projects]]
   name = "github.com/nats-io/go-nats"
   packages = [
+    ".",
     "encoders/builtin",
     "util"
   ]
-  revision = "d66cb54e6b7bdd93f0b28afc8450d84c780dfb68"
-  version = "v1.4.0"
-
-[[projects]]
-  name = "github.com/nats-io/nats"
-  packages = ["."]
   revision = "d66cb54e6b7bdd93f0b28afc8450d84c780dfb68"
   version = "v1.4.0"
 
@@ -136,7 +131,7 @@
   branch = "master"
   name = "github.com/r3labs/akira"
   packages = ["."]
-  revision = "0f4f76b1155209cbdd18da3693f44f4fc9f8275d"
+  revision = "8754167cb7b314671eb1e2abf2e9465f2e3d5ad4"
 
 [[projects]]
   branch = "master"
@@ -171,6 +166,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "e333705f85e0331f6d7999dcdcee812171c5d00f88d1661ca52c11359c264c9a"
+  inputs-digest = "3f7a064f0d978d8ee87e38b811dbf8db214bed981238b9a36708baa976861732"
   solver-name = "gps-cdcl"
   solver-version = 1

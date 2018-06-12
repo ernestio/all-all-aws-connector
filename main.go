@@ -29,7 +29,7 @@ import (
 	"github.com/ernestio/ernestaws/route53"
 	"github.com/ernestio/ernestaws/s3"
 	"github.com/ernestio/ernestaws/vpc"
-	"github.com/nats-io/nats"
+	"github.com/nats-io/go-nats"
 )
 
 var nc *nats.Conn
