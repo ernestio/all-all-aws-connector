@@ -2,6 +2,7 @@
 
 
 [[projects]]
+  digest = "1:1f565194025f26f9a227f0dc081a04cd09f7fec2af2a4ffd0ce3bcf208156c3d"
   name = "github.com/aws/aws-sdk-go"
   packages = [
     "aws",
@@ -34,25 +35,31 @@
     "service/rds",
     "service/route53",
     "service/s3",
-    "service/sts"
+    "service/sts",
   ]
+  pruneopts = "UT"
   revision = "1b176c5c6b57adb03bb982c21930e708ebca5a77"
   version = "v1.12.70"
 
 [[projects]]
   branch = "master"
+  digest = "1:40f26f5af900819e344f0066e0970b5537ee34027d5035fa66e37a4ed6bfef6e"
   name = "github.com/ernestio/crypto"
   packages = ["aes"]
+  pruneopts = "UT"
   revision = "176d762f3fa4a52c504c4b55579f44df5e494415"
 
 [[projects]]
   branch = "master"
+  digest = "1:6078f921de2a68b6afbc31dfa1684d600966f4c332063e8daef61758b6a6094e"
   name = "github.com/ernestio/ernest-config-client"
   packages = ["."]
-  revision = "3ae64ad7b8e5b19b31ff8a8e0bedcf807989e42e"
+  pruneopts = "UT"
+  revision = "9588aab91bdf53d2fa430f9505b33457d3fcb3bc"
 
 [[projects]]
   branch = "develop"
+  digest = "1:36693e872b4036ffc7a763d9ea86eeae2afce78859f07541ef9f2d7275872c72"
   name = "github.com/ernestio/ernestaws"
   packages = [
     ".",
@@ -71,101 +78,145 @@
     "rdsinstance",
     "route53",
     "s3",
-    "vpc"
+    "vpc",
   ]
+  pruneopts = "UT"
   revision = "fd37bb247aea53b1b9952f6e97610f4dea0af4e7"
 
 [[projects]]
+  digest = "1:50772cf1f376b08cb57b4e8e9225775d9f9f4aad8487313afcb66846ceaa5d4c"
   name = "github.com/go-ini/ini"
   packages = ["."]
+  pruneopts = "UT"
   revision = "32e4c1e6bc4e7d0d8451aa6b75200d19e37a536a"
   version = "v1.32.0"
 
 [[projects]]
+  digest = "1:510a2b056950ed12b4f3ac704ee1b34fd1920cb5b26f60f98d069de89c60adb7"
   name = "github.com/jinzhu/gorm"
   packages = [
     ".",
-    "dialects/postgres"
+    "dialects/postgres",
   ]
+  pruneopts = "UT"
   revision = "5174cc5c242a728b435ea2be8a2f7f998e15429b"
   version = "v1.0"
 
 [[projects]]
   branch = "master"
+  digest = "1:2cf1e05311b662e68d938f6655c6c5a44ae0e6b3995e390c75fcd8224afa48df"
   name = "github.com/jinzhu/inflection"
   packages = ["."]
+  pruneopts = "UT"
   revision = "1c35d901db3da928c72a72d8458480cc9ade058f"
 
 [[projects]]
+  digest = "1:e22af8c7518e1eab6f2eab2b7d7558927f816262586cd6ed9f349c97a6c285c4"
   name = "github.com/jmespath/go-jmespath"
   packages = ["."]
+  pruneopts = "UT"
   revision = "0b12d6b5"
 
 [[projects]]
   branch = "master"
+  digest = "1:4acac74be385dafdaacb655ac4c0d8988cc9fd1bed2c068e3fdad76b8a842594"
   name = "github.com/lib/pq"
   packages = [
     ".",
     "hstore",
-    "oid"
+    "oid",
   ]
+  pruneopts = "UT"
   revision = "88edab0803230a3898347e77b474f8c1820a1f20"
 
 [[projects]]
+  digest = "1:0923946dc9acc1aeb0cdee47c1bf85cb7662562ecb2ddae1f73bbd34c322ecfe"
   name = "github.com/nats-io/go-nats"
   packages = [
     ".",
     "encoders/builtin",
-    "util"
+    "util",
   ]
+  pruneopts = "UT"
   revision = "d66cb54e6b7bdd93f0b28afc8450d84c780dfb68"
   version = "v1.4.0"
 
 [[projects]]
+  digest = "1:c3cd663f2f30b92536b9f290ac85c6310dae36a14cb8961553ae9ccf0d85ae41"
   name = "github.com/nats-io/nuid"
   packages = ["."]
+  pruneopts = "UT"
   revision = "289cccf02c178dc782430d534e3c1f5b72af807f"
   version = "v1.0.0"
 
 [[projects]]
   branch = "master"
+  digest = "1:b6f319f04391f5e3d1c9b81640c3b1dcb8a78e0a824e7e2f952ce2a67bae48d6"
   name = "github.com/r3labs/akira"
   packages = ["."]
+  pruneopts = "UT"
   revision = "8754167cb7b314671eb1e2abf2e9465f2e3d5ad4"
 
 [[projects]]
   branch = "master"
+  digest = "1:ff6b0586c0621a76832cf783eee58cbb9d9795d2ce8acbc199a4131db11c42a9"
   name = "github.com/satori/go.uuid"
   packages = ["."]
+  pruneopts = "UT"
   revision = "36e9d2ebbde5e3f13ab2e25625fd453271d6522e"
 
 [[projects]]
   branch = "master"
+  digest = "1:f92f6956e4059f6a3efc14924d2dd58ba90da25cc57fe07ae3779ef2f5e0c5f2"
   name = "golang.org/x/crypto"
   packages = ["pbkdf2"]
+  pruneopts = "UT"
   revision = "1875d0a70c90e57f11972aefd42276df65e895b9"
 
 [[projects]]
   branch = "v1"
+  digest = "1:3443b1423511a78a2108f907e8ab347e3e16db19b2ab6d3219d75d88839757c1"
   name = "gopkg.in/bsm/ratelimit.v1"
   packages = ["."]
+  pruneopts = "UT"
   revision = "db14e161995a5177acef654cb0dd785e8ee8bc22"
 
 [[projects]]
+  digest = "1:cac778da79c136e5de51b654d377cdaab15be93cfd1f98fab4866dbb7441d445"
   name = "gopkg.in/redis.v3"
   packages = [
     ".",
     "internal",
     "internal/consistenthash",
     "internal/hashtag",
-    "internal/pool"
+    "internal/pool",
   ]
+  pruneopts = "UT"
   revision = "b5e368500d0a508ef8f16e9c2d4025a8a46bcc29"
   version = "v3.6.4"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "3f7a064f0d978d8ee87e38b811dbf8db214bed981238b9a36708baa976861732"
+  input-imports = [
+    "github.com/ernestio/ernest-config-client",
+    "github.com/ernestio/ernestaws",
+    "github.com/ernestio/ernestaws/ebs",
+    "github.com/ernestio/ernestaws/elb",
+    "github.com/ernestio/ernestaws/firewall",
+    "github.com/ernestio/ernestaws/iaminstanceprofile",
+    "github.com/ernestio/ernestaws/iampolicy",
+    "github.com/ernestio/ernestaws/iamrole",
+    "github.com/ernestio/ernestaws/instance",
+    "github.com/ernestio/ernestaws/internetgateway",
+    "github.com/ernestio/ernestaws/nat",
+    "github.com/ernestio/ernestaws/network",
+    "github.com/ernestio/ernestaws/rdscluster",
+    "github.com/ernestio/ernestaws/rdsinstance",
+    "github.com/ernestio/ernestaws/route53",
+    "github.com/ernestio/ernestaws/s3",
+    "github.com/ernestio/ernestaws/vpc",
+    "github.com/nats-io/go-nats",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1
